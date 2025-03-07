@@ -1,0 +1,31 @@
+:root {
+  --vp-c-brand: #3eaf7c;
+  --vp-c-brand-light: #4abf8a;
+  --vp-c-brand-lighter: #5ccf99;
+  --vp-c-brand-dark: #369f6b;
+  --vp-c-brand-darker: #2e8f5b;
+}
+
+.VPContent.is-home {
+  padding-bottom: 0;
+}
+
+.blog-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 移除博客列表页的侧边栏 */
+.VPDoc.has-aside .content-container {
+  max-width: 100% !important;
+}
+
+.VPDoc.has-aside .aside {
+  display: none !important;
+}
+
+.VPDoc.has-aside .content {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
