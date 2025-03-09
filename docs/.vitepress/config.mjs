@@ -1,4 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { inject } from '@vercel/analytics'
+
+// 初始化 Vercel Analytics
+inject()
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
