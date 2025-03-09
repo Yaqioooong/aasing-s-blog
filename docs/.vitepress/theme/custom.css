@@ -16,16 +16,6 @@
   padding: 0 1.5rem;
 }
 
-/* 移除博客列表页的侧边栏 */
-.VPDoc.has-aside .content-container {
-  max-width: 100% !important;
-}
-
-.VPDoc.has-aside .aside {
-  display: none !important;
-}
-
-.VPDoc.has-aside .content {
-  margin-left: auto !important;
-  margin-right: auto !important;
+.VPDoc {
+  padding: 28px 32px 28px !important;
 }

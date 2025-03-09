@@ -39,9 +39,9 @@ const formatDate = (date) => {
     <!-- 文章列表 -->
     <div class="posts">
       <div v-for="post in currentPosts" :key="post.url" class="post-item">
-        <h2 class="post-title">
+        <h1 class="post-title">
           <a :href="post.url">{{ post.frontmatter.title || '无标题' }}</a>
-        </h2>
+        </h1>
         <div class="post-meta">
           <time class="post-date" v-if="post.frontmatter.date">{{ formatDate(post.frontmatter.date) }}</time>
         </div>
@@ -88,12 +88,12 @@ const formatDate = (date) => {
   transform: translateX(4px);
 }
 
-.post-title {
-  margin: 0 0 0.8rem;
-  font-size: 1.4rem;
-  line-height: 1.3;
-  font-weight: 900;
-  font-family: "Noto Serif", "Source Han Serif SC", serif;
+.blog-list .posts .post-item .post-title {
+  margin: 0 0 0.2rem !important;
+  font-size: 1.4rem !important;
+  line-height: 1.3 !important;
+  font-weight: 900 !important;
+  font-family: "Noto Serif", "Source Han Serif SC", serif !important;
 }
 
 .post-title a {
