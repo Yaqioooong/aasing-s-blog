@@ -1,4 +1,10 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#42b883"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="20" fill="white" font-weight="bold">A</text>
+  <!-- 外层轮廓 -->
+  <path d="M17 6C22.5 6 26 10.5 26 16C26 21.5 22.5 26 17 26C11.5 26 7 21.5 7 16C7 10.5 11.5 6 17 6Z" stroke="#000000" stroke-width="1.5"/>
+  <!-- 鸭头主体 -->
+  <path d="M8 16C8 11 12 7 17 7C22 7 25 11 25 16C25 21 22 25 17 25C12 25 8 21 8 16Z" fill="#FFD700"/>
+  <!-- 鸭嘴 -->
+  <path d="M6 16C6 16 8 14.8 10 14.8C12 14.8 14 15.5 14 16C14 16.5 12 17.2 10 17.2C8 17.2 6 16 6 16Z" fill="#FFA500" stroke="#000000" stroke-width="1.2"/>
+  <!-- 眼睛 -->
+  <circle cx="19" cy="14" r="1.5" fill="#000000"/>
 </svg>

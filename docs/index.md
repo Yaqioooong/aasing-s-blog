@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "👋AaSing‘s Blog"
-  text: "Learning & Sharing🎉"
+  name: "👋 AaSing‘s Blog"
+  text: "Learning & Sharing 🎉"
   tagline: "💡 Writing helps better learning"
   actions:
     - theme: brand
@@ -15,11 +15,11 @@ hero:
       link: /about.html
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 👨🏼‍💻 Software Engineer
+    details: Full-stack developer specializing in Java backend and modern JavaScript frameworks. Passionate about building scalable solutions and exploring cutting-edge technologies.
+  - title: 📷 Photographer
+    details: Capturing moments and perspectives through the lens. Explore my visual storytelling on Unsplash at <a href = "https://unsplash.com/@pat_k">@pat_k</a>
+  - title: 📝 Writer
+    details: Sharing technical insights, development experiences, and industry best practices through well-crafted articles and tutorials.
 ---
 
