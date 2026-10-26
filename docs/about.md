@@ -11,12 +11,4 @@
 ## 联系方式
 
 - GitHub: https://github.com/Yaqioooong
-- Email: aasing.gwol@gmail.com
-
-## 技术栈
-
-本博客使用以下技术构建：
-
-- VitePress - 静态站点生成器
-- Vue.js - 渐进式 JavaScript 框架
-- Markdown - 文档编写
+- Email: yaxing.guo.ai@gmail.com
