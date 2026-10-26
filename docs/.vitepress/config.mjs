@@ -61,7 +61,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Powered by VitePress',
-      copyright: 'Copyright © 2025-present Yaxing_Guo'
+      copyright: 'Copyright © 2026-present Yaxing Guo Aka. Roy'
     },
     appearance: true
   }
