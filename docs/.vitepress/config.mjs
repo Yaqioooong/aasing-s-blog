@@ -31,9 +31,9 @@ export default defineConfig({
       label: '目录'
     },
     nav: [
-      { text: '首页', link: '/' },
-      { text: '博客', link: '/posts/' },
-      { text: '关于', link: '/about' }
+      { text: 'Home', link: '/' },
+      { text: 'Blogs', link: '/posts/' },
+      { text: 'About', link: '/about' }
     ],
     // lastUpdated: {
     //   text: '最后更新于',
