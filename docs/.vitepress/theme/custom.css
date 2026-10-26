@@ -22,3 +22,30 @@
 .content{
   padding: 0 25px 28px !important;
 }
+
+/*
+ * 右侧目录（outline）默认是 position: fixed、整屏高，而 footer 在普通文档流中。
+ * 滚动到页面底部时 footer 进入视口，目录却仍固定在原处，于是目录底部被 footer 盖住；
+ * 视口越矮、触控板回弹时越明显。
+ *
+ * 1. 目录高度减去 footer 的实际高度（由 Layout.vue 写入 --vp-footer-height），
+ *    让目录在 footer 上方收尾，而不是伸到 footer 背后；
+ * 2. 底部渐隐遮罩同步上移；
+ * 3. 目录层级高于 footer，回弹时 footer 即使短暂上移也不会压住目录。
+ * 仅在右侧目录真正显示的宽度（>= 1280px）生效。
+ */
+@media (min-width: 1280px) {
+  .VPDoc .aside-container {
+    height: calc(100vh - var(--vp-footer-height, 113px));
+    z-index: 20;
+  }
+
+  .VPDoc .aside-content {
+    min-height: 0;
+  }
+
+  .VPDoc .aside-curtain {
+    bottom: var(--vp-footer-height, 113px);
+    z-index: 21;
+  }
+}

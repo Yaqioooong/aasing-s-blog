@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "👋 AaSing‘s Blog"
+  name: "👋 Roy's Blog"
   text: "Learning & Sharing 🎉"
-  tagline: "💡 Writing helps better learning"
+  tagline: "💡 Writing helps better thinking & learning"
   actions:
     - theme: brand
       text: Blogs
