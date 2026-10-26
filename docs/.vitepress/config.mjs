@@ -6,7 +6,7 @@ inject()
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "AaSing's Blog",
+  title: "Roy's Blog",
   description: "记录学习和生活",
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
