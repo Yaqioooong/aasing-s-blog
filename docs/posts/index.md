@@ -1,6 +1,7 @@
 ---
 title: 博客文章
 description: 所有博客文章的列表展示
+aside: false
 ---
 
 <script setup>
@@ -112,6 +113,7 @@ const formatDate = (date) => {
 <style>
 .blog-container {
   max-width: 900px;
+  margin: 0 auto;
 }
 
 .page-title {
