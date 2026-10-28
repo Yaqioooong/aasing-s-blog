@@ -12,7 +12,7 @@ let footerEl
 
 // 把 footer 的实际高度同步给 CSS，右侧目录据此在 footer 上方收尾
 function syncFooterHeight() {
-  if (!footerEl) return
+  if (typeof document === 'undefined' || !footerEl) return
   document.documentElement.style.setProperty(
     '--vp-footer-height',
     `${footerEl.offsetHeight}px`
@@ -20,6 +20,7 @@ function syncFooterHeight() {
 }
 
 function observeFooter() {
+  if (typeof document === 'undefined') return
   footerObserver?.disconnect()
   footerEl = document.querySelector('.VPFooter')
 
@@ -51,7 +52,9 @@ watch(
 
 onBeforeUnmount(() => {
   footerObserver?.disconnect()
-  document.documentElement.style.removeProperty('--vp-footer-height')
+  if (typeof document !== 'undefined') {
+    document.documentElement.style.removeProperty('--vp-footer-height')
+  }
 })
 </script>
 

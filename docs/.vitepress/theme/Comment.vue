@@ -9,6 +9,7 @@ const giscusTheme = ref('light')
 // 监听主题变化
 watchEffect(() => {
   giscusTheme.value = isDark.value ? 'dark' : 'light'
+  if (typeof document === 'undefined') return
   const iframe = document.querySelector('.giscus-frame')
   if (iframe) {
     iframe.contentWindow.postMessage(

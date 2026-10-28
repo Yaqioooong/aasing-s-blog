@@ -1,0 +1,62 @@
+{
+  "about.md": {
+    "title": "关于",
+    "description": "记录学习和生活",
+    "date": "",
+    "image": "/og/950f68744d.png"
+  },
+  "api-examples.md": {
+    "title": "Runtime API Examples",
+    "description": "记录学习和生活",
+    "date": "",
+    "image": "/og/5221a47858.png"
+  },
+  "index.md": {
+    "title": "Roy's Blog",
+    "description": "记录学习和生活",
+    "date": "",
+    "image": "/og/dd0977545a.png"
+  },
+  "markdown-examples.md": {
+    "title": "Markdown Extension Examples",
+    "description": "记录学习和生活",
+    "date": "",
+    "image": "/og/638a561f59.png"
+  },
+  "posts/AI助手采购如何确保不出错？.md": {
+    "title": "AI采购助手如何确保下单不出错？",
+    "description": "随着 AI Agent 逐步深入企业核心业务，如何确保 AI 在处理敏感数据、执行关键业务操作时的准确性与可靠性，成为 AI 落地过程中必须解决的工程问题。尤其是在采购等涉及金额、供应商信息和审批流程的场景中，AI 的一次错误操作就可能造成实际的业务损失。本文将以 AI 采购场景为切入点，从系统设计与工程实践出发，探讨如何通过权限控制、数据校验、规则引擎、风险拦截、人工介入等机制，构建可靠的 AI 服务，尽可能降低 AI 的错误率，使其在安全性与执行准确性上达到甚至超越人工水平。",
+    "date": "2026-10-26",
+    "image": "/og/e07e509001.png"
+  },
+  "posts/MQ如何确保消息的可靠性.md": {
+    "title": "MQ从头到脚不丢消息该怎么做？",
+    "description": "消息队列在分布式系统中扮演着重要角色，但如何确保消息传递的可靠性和准确性一直是个挑战。本文通过生动的类比和真实案例，深入探讨如何保证消息不丢失且不重复，包括消息追踪、幂等性处理等核心技术.",
+    "date": "2025-03-13",
+    "image": "/og/6432e6c614.png"
+  },
+  "posts/index.md": {
+    "title": "博客文章",
+    "description": "所有博客文章的列表展示",
+    "date": "",
+    "image": "/og/c6ceaff21d.png"
+  },
+  "posts/redis分布式锁.md": {
+    "title": "Redis分布式锁从毛坯到别墅",
+    "description": "分布式锁是在分布式系统中用于协调多个进程或服务对共享资源访问的一种机制。它确保在任意时刻，只有一个服务实例能够获取锁并操作共享资源，从而避免数据不一致问题。本文探讨在实际应用中，分布式锁的逐步完善的过程，由浅入深",
+    "date": "2025-03-08",
+    "image": "/og/acecd9c912.png"
+  },
+  "posts/采购助手的记忆体系怎么做的.md": {
+    "title": "会记住偏好，不会记错订单：AI 采购 Agent 的分层记忆",
+    "description": "Agent 的记忆不是一个“存聊天记录的数据库”。可靠的企业 Agent 必须区分用户偏好、会话状态、业务事实和全局规则，并让每一类信息由正确的存储、生命周期和权限边界管理。",
+    "date": "2026-10-28",
+    "image": "/og/cdc2e11ea9.png"
+  },
+  "posts/阿里云ECS操作实战.md": {
+    "title": "阿里云ECS操作实战",
+    "description": "在云服务器上快速部署和管理服务是开发者和运维人员的常见需求。本文将详细介绍如何在阿里云 ECS 实例上 **重置密码**、**安装 Docker**，并使用 Docker 部署 Redis 和 MySQL，同时确保数据持久化和服务的高效管理。",
+    "date": "2025-03-19",
+    "image": "/og/ee0f3e4320.png"
+  }
+}

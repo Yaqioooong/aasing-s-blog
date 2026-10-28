@@ -1,13 +1,35 @@
+import { readFileSync } from 'node:fs'
 import { defineConfig } from 'vitepress'
 import { inject } from '@vercel/analytics'
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+  ogDate,
+  pageUrl,
+} from './og.mjs'
 
 // 初始化 Vercel Analytics
 inject()
 
+// 由 scripts/og/generate.mjs 在 build 前生成；缺失时退回默认图。
+function loadOgManifest() {
+  try {
+    return JSON.parse(
+      readFileSync(new URL('./og-manifest.json', import.meta.url), 'utf8'),
+    )
+  } catch {
+    return {}
+  }
+}
+
+const ogManifest = loadOgManifest()
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Roy's Blog",
-  description: "记录学习和生活",
+  title: SITE_NAME,
+  description: DEFAULT_DESCRIPTION,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap' }],
@@ -20,6 +42,56 @@ export default defineConfig({
       }
     `]
   ],
+  transformHead({ pageData }) {
+    if (pageData.frontmatter?.og === false) return []
+
+    const entry = ogManifest[pageData.relativePath]
+    const title =
+      entry?.title ||
+      pageData.frontmatter?.title ||
+      pageData.title ||
+      SITE_NAME
+    const description =
+      entry?.description ||
+      pageData.frontmatter?.description ||
+      pageData.description ||
+      DEFAULT_DESCRIPTION
+    const shortDescription =
+      [...description].length > 200
+        ? [...description].slice(0, 199).join('') + '…'
+        : description
+    const image = entry?.image
+      ? new URL(entry.image, SITE_URL).href
+      : DEFAULT_OG_IMAGE
+    const published = entry?.date || ogDate(pageData.frontmatter?.date)
+    const isPost =
+      pageData.relativePath.startsWith('posts/') &&
+      pageData.relativePath !== 'posts/index.md'
+
+    const tags = [
+      ['meta', { property: 'og:type', content: isPost ? 'article' : 'website' }],
+      ['meta', { property: 'og:site_name', content: SITE_NAME }],
+      ['meta', { property: 'og:locale', content: 'zh_CN' }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: shortDescription }],
+      ['meta', { property: 'og:url', content: pageUrl(pageData.relativePath) }],
+      ['meta', { property: 'og:image', content: image }],
+      ['meta', { property: 'og:image:width', content: '1200' }],
+      ['meta', { property: 'og:image:height', content: '630' }],
+      ['meta', { property: 'og:image:alt', content: title }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: shortDescription }],
+      ['meta', { name: 'twitter:image', content: image }],
+      ['meta', { name: 'twitter:image:alt', content: title }],
+    ]
+
+    if (published) {
+      tags.push(['meta', { property: 'article:published_time', content: published }])
+    }
+
+    return tags
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     search: {
